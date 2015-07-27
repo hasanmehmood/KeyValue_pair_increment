@@ -32,6 +32,12 @@ You can use curl command to test all these operations.
 		"value": 1001
 	}
 
+	Call it again
+
+	{
+		"value": 1002
+	}	
+
 ####Updating a value of a Key
 	curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -d "value=YOUR_NEW_VALUE" -X PUT
 	e.g
