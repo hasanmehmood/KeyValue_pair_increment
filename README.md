@@ -12,13 +12,13 @@ You can also Update or Delete your key value pair.
 You can use curl command to test all these operations.
 
 ####Create a Key Value pair
-curl http://localhost:5000/api/v1/keyvalue -d "key=KEY_NAME&value=INITIAL_VALUE" -X POST -v
+	curl http://localhost:5000/api/v1/keyvalue -d "key=KEY_NAME&value=INITIAL_VALUE" -X POST -v
 
 ####GET a value of a Key
-curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY
+	curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY
 
 ####Updating a value of a Key
-curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -X DELETE
+	curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -X DELETE
 
 ####Deleting a key value pair
-curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -d "value=YOUR_NEW_VALUE" -X PUT
+	curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -d "value=YOUR_NEW_VALUE" -X PUT
