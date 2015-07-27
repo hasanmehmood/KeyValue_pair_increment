@@ -1,3 +1,4 @@
+# Implementing all the routes here!
 
 from flask_restful import reqparse, abort, Api, Resource, fields, marshal
 from flask import jsonify
@@ -32,12 +33,12 @@ class KeyValueAPI(Resource):
 
     def get(self, key):
 
-        KeyValue.objects(key=key).update(inc__value=1)
+        # incrementing using inc according to mongoengine
+        KeyValue.objects(key=key).update(inc__value=1) 
         keyvalue = KeyValue.objects(key=key).first()
         abort_if_record_doesnt_exist(key, keyvalue)
         
         return { 'value': keyvalue.value }, 200
-
 
     def delete(self, key):
 
@@ -47,7 +48,6 @@ class KeyValueAPI(Resource):
 
         return { 'key': key, 
                  'status': 'deleted' }, 204
-
 
     def put(self, key):
 
