@@ -1,3 +1,4 @@
+
 from flask_restful import reqparse, abort, Api, Resource, fields, marshal
 from flask import jsonify
 
@@ -60,17 +61,4 @@ class KeyValueAPI(Resource):
                  'value': keyvalue.value }, 201
 
 
-# Sample Calls
-
-# Creating a Key value pair:
-# curl http://localhost:5000/api/v1/keyvalue -d "key=KEY_NAME&value=INITIAL_VALUE" -X POST -v
-
-# Getting a value:
-# curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY
-
-# Deleting a key value pair:
-# curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -X DELETE
-
-# Modifying value of a specific key
-# curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -d "value=YOUR_NEW_VALUE" -X PUT
 
