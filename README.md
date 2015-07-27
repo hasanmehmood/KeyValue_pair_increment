@@ -16,15 +16,32 @@ You can use curl command to test all these operations.
 	e.g
 	curl http://localhost:5000/api/v1/keyvalue -d "key=po_number&value=1000" -X POST -v
 
+	Response:
+	{
+	    "key": "po_number", 
+	    "value": 1000
+	}
+
 ####GET a value of a Key
 	curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY
 	e.g
 	curl http://localhost:5000/api/v1/keyvalue/po_number
 
+	Response:
+	{
+		"value": 1001
+	}
+
 ####Updating a value of a Key
 	curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -d "value=YOUR_NEW_VALUE" -X PUT
 	e.g
 	curl http://localhost:5000/api/v1/keyvalue/po_number -d "value=1234" -X PUT
+
+	Response:
+	{
+		"key": "po_number",
+		"value": 1234
+	}
 	
 ####Deleting a key value pair
 	curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -X DELETE
