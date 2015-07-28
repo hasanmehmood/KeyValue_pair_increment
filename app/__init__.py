@@ -6,4 +6,4 @@ app.config.from_object('app.settings')
 
 from app.models import KeyValue
 from app.resources import keyvalue
-from app import routes
+from app import routes, views
