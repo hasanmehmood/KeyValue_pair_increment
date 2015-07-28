@@ -1,4 +1,4 @@
-#Key Value Incremental App
+#Key Value Sequencer App
 
 ###Introduction
 Its a very basic app to store your key value pair, and the main feature of this app is that each time when you try to GET the value of your key, It will be incremented value each time.
