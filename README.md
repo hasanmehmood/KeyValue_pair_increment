@@ -53,3 +53,9 @@ You can use curl command to test all these operations.
 	curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -X DELETE
 	e.g
 	curl http://localhost:5000/api/v1/keyvalue/po_number -X DELETE
+
+
+###Unit Testing
+
+I have wrote tests for each API call, you can first start the application locally and than run tests.py file for results.
+	> python tests.py 
