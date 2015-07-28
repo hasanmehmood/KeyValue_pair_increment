@@ -58,4 +58,5 @@ You can use curl command to test all these operations.
 ###Unit Testing
 
 I have wrote tests for each API call, you can first start the application locally and than run tests.py file for results.
+
 	> python tests.py 
