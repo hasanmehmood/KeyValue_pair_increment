@@ -31,6 +31,8 @@ class  FlaskTestCase(unittest.TestCase):
 		post('http://localhost:5000/api/v1/keyvalue',
 			data={'key': 'test_bot', 'value': 101}).json()
 		response = get('http://localhost:5000/api/v1/keyvalue/test_bot').json()
+
+		# testing that I have received incremented value
 		self.assertEqual(response['value'], 102)
 
 		# deleting test data
@@ -45,6 +47,8 @@ class  FlaskTestCase(unittest.TestCase):
 			data={'key': 'test_bot', 'value': 101}).json()
 		response = put('http://localhost:5000/api/v1/keyvalue/test_bot',
 			data={ 'value': 100 }).json()
+
+		# testing that if the value has been modified or not
 		self.assertEqual(response['value'], 100)
 
 		# deleting test data
