@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Key Value Sequencer by hasanmehmood</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Key Value Sequencer</h1>
+        <p>Its a very basic app to store your key value pair, and the main feature of this app is that each time when you try to GET the value of your key, It will be incremented value each time.</p>
+
+        <p class="view"><a href="https://github.com/hasanmehmood/KeyValue_pair_increment">View the Project on GitHub <small>hasanmehmood/KeyValue_pair_increment</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/hasanmehmood/KeyValue_pair_increment/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/hasanmehmood/KeyValue_pair_increment/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/hasanmehmood/KeyValue_pair_increment">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="key-value-sequencer-app" class="anchor" href="#key-value-sequencer-app" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key Value Sequencer App</h1>
+
+<p>Link: <a href="http://keyvalue-pair.herokuapp.com/">http://keyvalue-pair.herokuapp.com/</a> (The API is live on heroku)</p>
+
+<h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>Its a very basic app to store your key value pair, and the main feature of this app is that each time when you try to GET the value of your key, It will be incremented value each time.</p>
+
+<p>For Example if you store a initial value of 1000 with a key "my_counter". Now call GET API for a value of your Key, You'll get 1001, call it again and you'll get 1002 and so on.</p>
+
+<p>You can also Update or Delete your key value pair.</p>
+
+<h3>
+<a id="api-documentation" class="anchor" href="#api-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Documentation</h3>
+
+<p>You can use curl command to test all these operations.</p>
+
+<h4>
+<a id="create-a-key-value-pair" class="anchor" href="#create-a-key-value-pair" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Key Value pair</h4>
+
+<pre><code>curl http://localhost:5000/api/v1/keyvalue -d "key=KEY_NAME&amp;value=INITIAL_VALUE" -X POST -v
+e.g
+curl http://localhost:5000/api/v1/keyvalue -d "key=po_number&amp;value=1000" -X POST -v
+
+Response:
+{
+    "key": "po_number", 
+    "value": 1000
+}
+</code></pre>
+
+<h4>
+<a id="get-a-value-of-a-key" class="anchor" href="#get-a-value-of-a-key" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET a value of a Key</h4>
+
+<pre><code>curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY
+e.g
+curl http://localhost:5000/api/v1/keyvalue/po_number
+
+Response:
+{
+    "value": 1001
+}
+
+Call it again
+
+{
+    "value": 1002
+}   
+</code></pre>
+
+<h4>
+<a id="updating-a-value-of-a-key" class="anchor" href="#updating-a-value-of-a-key" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating a value of a Key</h4>
+
+<pre><code>curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -d "value=YOUR_NEW_VALUE" -X PUT
+e.g
+curl http://localhost:5000/api/v1/keyvalue/po_number -d "value=1234" -X PUT
+
+Response:
+{
+    "key": "po_number",
+    "value": 1234
+}
+</code></pre>
+
+<h4>
+<a id="deleting-a-key-value-pair" class="anchor" href="#deleting-a-key-value-pair" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting a key value pair</h4>
+
+<pre><code>curl http://localhost:5000/api/v1/keyvalue/YOUR_KEY -X DELETE
+e.g
+curl http://localhost:5000/api/v1/keyvalue/po_number -X DELETE
+</code></pre>
+
+<h3>
+<a id="unit-testing" class="anchor" href="#unit-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit Testing</h3>
+
+<p>I have wrote tests for each API call, you can first start the application locally and than run tests.py file for results.</p>
+
+<pre><code>&gt; python tests.py 
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/hasanmehmood">hasanmehmood</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
