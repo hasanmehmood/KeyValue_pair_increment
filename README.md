@@ -1,5 +1,4 @@
 #Key Value Sequencer App
-Link: http://keyvalue-pair.herokuapp.com/ (The API is live on heroku)
 
 ###Introduction
 Its a very basic app to store your key value pair, and the main feature of this app is that each time when you try to GET the value of your key, It will be incremented value each time.
